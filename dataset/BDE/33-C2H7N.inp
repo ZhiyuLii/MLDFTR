@@ -1,0 +1,30 @@
+$qm
+xyz             33-C2H7N.xyz
+spin                       2
+charge            0
+mult              1
+iter                     200
+method          dft
+#lumofukui
+xfunc            xpbe
+cfunc            cpbe
+#etol               0.100E-06
+print                      1
+#guess           atom
+guess read 33-C2H7N.denmat.bin
+readmo     33-C2H7N.mo.bin
+diis              12    0.3000
+basis N N.6-311++G_3df_3pd
+basis H H.6-311++G_3df_3pd
+basis C C.6-311++G_3df_3pd
+postscf nncalc
+directvee
+nnfile 33-C2H7N
+nngrid 3
+nnstep 1.0
+nnerr    -4.48735177999988
+#postscf denmatw 33-C2H7N.denmat.bin
+#postscf writemo 33-C2H7N.mo.bin
+end
+                
+$doqm

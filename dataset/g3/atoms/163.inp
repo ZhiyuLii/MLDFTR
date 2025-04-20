@@ -1,0 +1,28 @@
+$qm
+xyz             163.xyz
+spin                       2
+charge        0
+mult        2
+iter                     800
+method          dft
+#lumofukui
+xfunc            xpbe
+cfunc            cpbe
+#etol               0.100E-06
+print                      1
+#guess           atom
+guess read 163.denmat.bin
+readmo     163.mo.bin
+diis              12    0.3000
+basis Cl Cl.6-311++G_3df_3pd
+postscf nncalc
+directvee
+nnfile 163
+nngrid 3
+nnstep 1.0
+nnerr 0.0
+#postscf denmatw 163.denmat.bin
+#postscf writemo 163.mo.bin
+end
+                
+$doqm

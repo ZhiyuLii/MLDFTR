@@ -1,0 +1,30 @@
+$qm
+xyz             22-C4H10O.xyz
+spin                       2
+charge            0
+mult              1
+iter                     200
+method          dft
+#lumofukui
+xfunc            xpbe
+cfunc            cpbe
+#etol               0.100E-06
+print                      1
+#guess           atom
+guess read 22-C4H10O.denmat.bin
+readmo     22-C4H10O.mo.bin
+diis              12    0.3000
+basis O O.6-311++G_3df_3pd
+basis H H.6-311++G_3df_3pd
+basis C C.6-311++G_3df_3pd
+postscf nncalc
+directvee
+nnfile 22-C4H10O
+nngrid 3
+nnstep 1.0
+nnerr    -4.48735177999988
+#postscf denmatw 22-C4H10O.denmat.bin
+#postscf writemo 22-C4H10O.mo.bin
+end
+                
+$doqm

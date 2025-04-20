@@ -1,0 +1,28 @@
+$qm
+xyz             153.xyz
+spin                       2
+charge        0
+mult        3
+iter                     200
+method          dft
+#lumofukui
+xfunc            xpbe
+cfunc            cpbe
+#etol               0.100E-06
+print                      1
+#guess           atom
+guess read 153.denmat.bin
+readmo     153.mo.bin
+diis              12    0.3000
+basis C C.6-311++G_3df_3pd
+postscf nncalc
+directvee
+nnfile 153
+nngrid 3
+nnstep 1.0
+nnerr 0.0
+#postscf denmatw 153.denmat.bin
+#postscf writemo 153.mo.bin
+end
+                
+$doqm
